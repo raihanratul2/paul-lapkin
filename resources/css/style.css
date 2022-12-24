@@ -1,0 +1,522 @@
+/* =====
+Template Name: Paul
+Template URI: https://moshiur.dev/projects/paul-lapkin/
+Author: Moshiur
+Author URI: https://moshiur.me/
+Description: A simple html5 portfolio template.
+Version: 1.0
+===== */
+
+/* CSS INDEX 
+
+0. COMMOM CSS
+1. REUSABLE COMPONENTS
+2. HERO
+3. ABOUT
+4. PROCESS
+5. EXPERIENCE
+6. WORK
+7. Testimonial
+8. Contact
+9. Footer
+
+*/
+
+/* COMMOM CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000;
+}
+
+.clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* REUSABLE COMPONENTS */
+.container {
+    max-width: 118rem;
+    margin: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+section {
+    padding: 12rem 0;
+}
+
+.cta-btn {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    text-transform: capitalize;
+    text-decoration: none;
+    width: 20rem;
+    padding: 1.5rem 0;
+    text-align: center;
+    border: .2rem solid #000;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.section-title {
+    margin-bottom: 6.5rem;
+    text-align: center;
+}
+
+
+.section-title h2 {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+}
+
+/* HERO */
+#hero {
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7) url('./img/hero.jpg') no-repeat center / cover;
+    background-blend-mode: overlay;
+    position: relative;
+}
+
+.nav {
+    padding-top: 4rem;
+    z-index: 999;
+}
+
+/* Hamburger Menu */
+.menu-container {
+    width: 0;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.close-btn a ion-icon {
+    color: #fff;
+    font-size: 4rem;
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+}
+
+.hamburger-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.hamburger-menu li a {
+    color: #fff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 1rem 0;
+    display: inline-block;
+}
+
+/* Sticky Menu */
+nav.uk-sticky-fixed {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1rem 0;
+}
+
+.logo {
+    float: left;
+}
+
+.menu {
+    float: right;
+}
+
+.menu a ion-icon {
+    font-size: 4rem;
+    color: #fff;
+    border: .1rem solid #fff;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+.hero-content h1 {
+    font-size: 6.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    border-top: .3rem solid #fff;
+    border-bottom: .3rem solid #fff;
+    display: inline-block;
+}
+
+.hero-content span {
+    font-size: 2rem;
+    color: #fff;
+    display: block;
+}
+
+.next-section {
+    text-align: center;
+}
+
+.next-section a {
+    position: absolute;
+    bottom: 4rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.next-section a ion-icon {
+    color: #fff;
+    font-size: 4rem;
+    position: relative;
+    -webkit-animation: arrow 2s ease-in infinite;
+            animation: arrow 2s ease-in infinite;
+    z-index: 999;
+}
+
+/* Animation */
+@-webkit-keyframes arrow {
+    0% {
+        top: 1rem;
+    }
+
+    45% {
+        top: 3rem;
+    }
+
+    100% {
+        top: 1rem;
+    }
+}
+@keyframes arrow {
+    0% {
+        top: 1rem;
+    }
+
+    45% {
+        top: 3rem;
+    }
+
+    100% {
+        top: 1rem;
+    }
+}
+
+canvas.particles-js-canvas-el {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* ABOUT */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 8rem;
+}
+
+.about-grid img {
+    width: 100%;
+    -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.about-grid h4 {
+    font-size: 1.8rem;
+}
+
+.about-content {
+    margin: 3rem 0;
+}
+
+.btn-full {
+    background-color: #ff2b4a;
+    border-color: #ff2b4a;
+}
+
+.btn-full:hover {
+    background-color: transparent;
+    color: #ff2b4a;
+}
+
+/* PROCESS */
+#process {
+    background: #f6f6f6;
+    text-align: center;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.process-grid-item {
+    background: #000;
+    color: #fff;
+    padding: 6rem 0;
+}
+
+.process-grid-item ion-icon {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+}
+
+.process-grid-item h4 {
+    color: #fff;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+.process-grid-item:nth-child(1) {
+    background-color: #10c6fc;
+}
+
+.process-grid-item:nth-child(2) {
+    background-color: #835aeb;
+}
+
+.process-grid-item:nth-child(3) {
+    background-color: #002453;
+}
+
+.process-grid-item:nth-child(4) {
+    background-color: #ff2b4a;
+}
+
+/* EXPERIENCE */
+#exp {
+    background: url(./img/experience.jpg) no-repeat center / cover fixed;
+}
+
+.exp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.exp-edu-grid-item {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2.5rem;
+    color: #fff;
+}
+
+.exp-edu-grid-item h3 {
+    color: #fff;
+    font-size: 2.6rem;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #fff;
+    margin: 3rem 0;
+}
+
+.exp-edu-grid-item h4 {
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.exp-edu-grid-item span {
+    margin: 1.5rem 0;
+    display: inline-block;
+}
+
+/* WORK */
+.work-filter {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.work-filter button {
+    background: #000;
+    color: #fff;
+    border: 0;
+    padding: .5rem 1rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.work-filter button:hover {
+    background: #ff2b4a;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.gallery-item {
+    height: 20rem;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-item:nth-child(5) {
+    grid-column: 1/3;
+}
+
+button.mixitup-control-active {
+    background-color: #ff2b4a;
+}
+
+.uk-lightbox {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Testimonial */
+#tm {
+    background: url(./img/testimonial.jpg) no-repeat center top / cover;
+}
+
+.tm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.quote {
+    width: 4.5rem;
+}
+
+.signature {
+    width: 15rem;
+}
+
+.tm-content {
+    margin: 4.5rem 0;
+}
+
+.tm-grid h4 {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+}
+
+/* Contact */
+#contact {
+    background: url(./img/contact.jpg) no-repeat center / cover fixed;
+}
+
+.ct-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.ct-grid-item:nth-child(1),
+.nested-ct-grid-item {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 3rem;
+}
+
+.ct-grid-item h3 {
+    color: #fff;
+    font-size: 2.6rem;
+    text-transform: uppercase;
+    margin-bottom: 4.5rem;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    border: .1rem solid #fff;
+    padding: 1rem;
+    color: #fff;
+    background: transparent;
+    margin: 1rem 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+form textarea {
+    height: 20rem;
+}
+
+.submit-btn {
+    text-align: right;
+}
+
+.nested-ct-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    color: #fff;
+}
+
+/* Footer */
+#footer {
+    padding: 4rem 0;
+    background: #222;
+    text-align: center;
+    color: #fff;
+}
+
+.social-list li {
+    display: inline-block;
+    list-style: none;
+}
+
+.social-list li a {
+    color: #fff;
+}
+
+.social-list li a ion-icon {
+    border-right: .1rem solid #fff;
+    padding: 0 1rem;
+}
+
+.social-list li:last-child a ion-icon {
+    border-right: 0;
+}
+
+.totop {
+    margin-top: 2rem;
+}
+
+.totop a {
+    border: .1rem solid #fff;
+    padding: 1rem;
+}
